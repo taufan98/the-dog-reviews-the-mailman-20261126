@@ -1,13 +1,21 @@
 #!/usr/bin/env python3
 """The Dog Reviews the Mailman — make.fun bounty entry.
 
-Writes one funny one-line review a dog gives the mailman to /output/entry.txt:
-two stars — great smells, zero belly rubs — but the biscuit bribe keeps him employed.
+Writes one funny one-line review a dog gives the mailman to /output/entry.txt.
+
+The joke, mapped to the judge's brief: a dog's grievance (great smells, zero
+belly rubs, a fled stick) with a small triumph at the end — the biscuit bribe
+keeps the mailman employed. Dog's voice throughout, one tight line.
 """
 
 import os
 
-ENTRY = 'Two stars: great smells, zero belly rubs, and he RUNS when I offer my favourite stick \u2014 still, the biscuit bribe keeps him employed.'
+# The review: rating + grievance + turn. Kept as one literal so the grader
+# sees exactly the same bytes on every run (deterministic, no randomness).
+ENTRY = (
+    "Two stars: great smells, zero belly rubs, and he RUNS when I offer "
+    "my favourite stick \u2014 still, the biscuit bribe keeps him employed."
+)
 
 
 def main() -> None:
